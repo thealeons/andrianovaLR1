@@ -1,5 +1,6 @@
 import logic.Decoder;
 import logic.Encoder;
+import logic.KeyGenerator;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -19,6 +20,12 @@ public class UnitTest {
         String key = "тсет";
         String  result = "тест";
         assertEquals(result,new Decoder().decryption(inputText,key));
+    }
+
+    @Test
+    public void checkGeneratedKey(){
+        int size = 10;
+        assertEquals(size,new KeyGenerator().getKey(size).length());
     }
 
 }
