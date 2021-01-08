@@ -18,6 +18,13 @@
         </dependency>
         <!-- _____________ -->
 
+        <!-- библиотека для графического интерфейса -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>15</version>
+        </dependency>
+        <!-- _____________ -->
 
     </dependencies>
 
