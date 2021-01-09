@@ -1,11 +1,10 @@
 package ui;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import logic.Encoder;
 import logic.KeyGenerator;
 
 public class Start {
@@ -18,6 +17,11 @@ public class Start {
     public GridPane startButtonsPanel;
     public Button saveGenerateKey;
     public TextField generateKeyValue;
+    public Pane mainPanel;
+    public TextArea input;
+    public TextArea output;
+    public Button startBtn;
+    public ChoiceBox typeShfr;
 
     public void addKey(MouseEvent mouseEvent) {
         addKey.setVisible(true);
@@ -31,9 +35,22 @@ public class Start {
     public void saveGenerateKey(MouseEvent mouseEvent) {
         try {
             key.setText(new KeyGenerator().getKey(Integer.parseInt(generateKeyValue.getText())));
+            generateKey.setVisible(false);
+            mainPanel.setVisible(true);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
         }
     }
+
+    public void startShfr(MouseEvent mouseEvent) {
+        if (typeShfr.getValue().equals("Шифратор")){
+            output.setText(new Encoder().encryption(input.getText(),key.getText()));
+
+        }
+        else if (typeShfr.getValue().equals("Дешифратор")){
+
+        }
+    }
+
 }
