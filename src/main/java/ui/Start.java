@@ -23,8 +23,10 @@ public class Start {
     public TextArea output;
     public Button startBtn;
     public ChoiceBox typeShfr;
+    public TextField addKeyEdit;
 
     public void addKey(MouseEvent mouseEvent) {
+        startButtonsPanel.setVisible(false);
         addKey.setVisible(true);
     }
 
@@ -54,4 +56,9 @@ public class Start {
         }
     }
 
+    public void addCreateKey(MouseEvent mouseEvent) {
+        key.setText(addKeyEdit.getText());
+        addKey.setVisible(false);
+        mainPanel.setVisible(true);
+    }
 }

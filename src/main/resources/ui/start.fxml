@@ -17,7 +17,16 @@
 <AnchorPane prefHeight="400.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Start">
    <children>
       <Label fx:id="key" layoutX="61.0" layoutY="377.0" prefHeight="18.0" prefWidth="77.0" />
-      <DialogPane fx:id="addKey" layoutX="46.0" layoutY="127.0" prefHeight="147.0" prefWidth="424.0" visible="false" />
+      <DialogPane fx:id="addKey" layoutX="46.0" layoutY="127.0" prefHeight="147.0" prefWidth="424.0" visible="false">
+         <graphic>
+            <AnchorPane prefHeight="88.0" prefWidth="424.0">
+               <children>
+                  <Button layoutX="338.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#addCreateKey" text="Ок" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Введите ключ" />
+                  <TextField fx:id="addKeyEdit" layoutX="132.0" layoutY="10.0" />
+               </children>
+            </AnchorPane>
+         </graphic></DialogPane>
       <DialogPane fx:id="generateKey" layoutX="61.0" layoutY="147.0" prefHeight="106.0" prefWidth="364.0" visible="false">
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
