@@ -4,6 +4,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import logic.Decoder;
 import logic.Encoder;
 import logic.KeyGenerator;
 
@@ -49,7 +50,7 @@ public class Start {
 
         }
         else if (typeShfr.getValue().equals("Дешифратор")){
-
+            output.setText(new Decoder().decryption(input.getText(),key.getText()));
         }
     }
 
